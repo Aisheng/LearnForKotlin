@@ -58,13 +58,20 @@ object RxJava {
             it.onNext(1)
             it.onComplete()
         }, BackpressureStrategy.BUFFER)
+                .map { it.times(100) }
                 .subscribeOn(Schedulers.newThread())
                 .subscribeOn(Schedulers.io())
-                .observeOn(Schedulers.newThread())
-                .doOnNext { println(Thread.currentThread().name) }
                 .observeOn(Schedulers.computation())
+                .doOnNext {
+                    println(it)
+                    println(Thread.currentThread().name)
+                }
+                .subscribeOn(Schedulers.io())
                 .observeOn(Schedulers.io())
-                .subscribe { println(Thread.currentThread().name) }
+                .subscribe {
+                    println(Thread.currentThread().name)
+                    println(it)
+                }
     }
 
 
