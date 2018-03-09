@@ -21,7 +21,7 @@ public class Lambda {
      */
     public void test(int k) {
         numbers.stream()
-                .filter(select.apply(k))
+                .filter(function.apply(k).apply(k))
                 .forEach(print);
 
 //        numbers.stream().filter(integer -> integer > k)
@@ -37,6 +37,11 @@ public class Lambda {
      * 级联 Lambda 表达式 和 selector(int k) 等价
      */
     private Function<Integer, Predicate<Integer>> select = integer -> number -> number > integer;
+
+    /**
+     * 乱写一通
+     */
+    private Function<Integer, Function<Integer, Predicate<Integer>>> function = integer -> k -> number -> number > k + integer;
 
     private Predicate<Integer> selector(int k) {
         return integer -> integer > k;
