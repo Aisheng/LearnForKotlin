@@ -188,6 +188,11 @@ object RxJava {
                 }
     }
 
+    fun concat() {
+        Flowable.concat(today(), interval2())
+                .subscribe { println(it) }
+    }
+
     fun test() {
         var mSubscription: Subscription? = null
         Flowable.create<String>({

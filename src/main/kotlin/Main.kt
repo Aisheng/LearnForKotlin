@@ -4,7 +4,7 @@ object Main {
 
     @JvmStatic
     fun main(args: Array<String>) {
-        RxJava.test()
+        println(4/5f)
         readLine()
     }
 }
