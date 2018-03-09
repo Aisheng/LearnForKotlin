@@ -4,7 +4,7 @@ object Main {
 
     @JvmStatic
     fun main(args: Array<String>) {
-        println(4/5f)
+        Lambda().test(10)
         readLine()
     }
 }
