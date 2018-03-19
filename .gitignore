@@ -1,4 +1,5 @@
 
-.idea/kotlinc.xml
-!/.idea/
-!/out/
+/.idea/
+/out/
+src/main/resources/
+src/test/
