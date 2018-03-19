@@ -1,4 +1,5 @@
 
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
@@ -46,5 +47,4 @@ public class Lambda {
     private Predicate<Integer> selector(int k) {
         return integer -> integer > k;
     }
-
 }
