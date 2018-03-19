@@ -8,7 +8,6 @@ import java.util.function.Predicate;
 
 public class Lambda {
 
-
     private List<Integer> numbers = new ArrayList<>();
 
     public Lambda() {
